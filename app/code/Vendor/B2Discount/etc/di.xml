@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!-- Dependency Injection configuration -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\SalesRule\Model\Rule\Action\Discount\CalculatorFactory">
+        <arguments>
+            <argument name="discountRules" xsi:type="array">
+                <item name="buy_two_discount" xsi:type="string">Vendor\B2Discount\Model\Rule\Action\Discount\BuyTwoDiscount</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Magento\SalesRule\Model\Rule\Action\SimpleActionOptionsProvider">
+        <plugin name="vendor_b2discount_simple_action_option" type="Vendor\B2Discount\Plugin\AddSimpleActionOption" />
+    </type>
+</config>
+
